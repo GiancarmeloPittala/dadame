@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --remote=production --cleanup"
+    "deploy": "push-dir --dir=dist --remote=https://github.com/GiancarmeloPittala/dadame.gitt --branch=production --cleanup"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
