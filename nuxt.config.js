@@ -59,6 +59,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile : [ 'vue-splide' ],
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
     }
