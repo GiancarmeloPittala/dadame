@@ -62,5 +62,20 @@ export default {
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
     }
+  },
+  generate: {
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const articlesRoutes = await $content().only(['slug']).fetch()
+
+      return [  ...articlesRoutes.map(myroute => myroute.slug === '/index' ? '/' : '/blog/' + myroute.slug) ]
+    },
+    ignore: [
+      '.nuxt', // buildDir
+      'node_modules',
+      'README.md'
+    ],
+    dir : '../server/public/',
+    fallback: '404.html'
   }
 }
