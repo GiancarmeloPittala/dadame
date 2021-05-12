@@ -7,22 +7,23 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "bandg": "nuxt build && nuxt generate",
     "deploy": "push-dir --dir=dist --remote=https://github.com/GiancarmeloPittala/dadame.git --branch=production --cleanup"
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.1",
     "@splidejs/vue-splide": "^0.3.5",
-    "core-js": "^3.9.1",
-    "nuxt": "^2.15.3",
+    "core-js": "^3.12.1",
+    "nuxt": "^2.15.5",
     "push-dir": "^0.4.1"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.1.1",
     "fibers": "^5.0.0",
-    "postcss": "^8.2.8",
+    "postcss": "^8.2.15",
     "sass": "^1.32.12",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.2.0"
   },
   "resolutions": {
     "@babel/core": "7.13.15",

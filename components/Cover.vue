@@ -1,6 +1,6 @@
 <template>
   <div>
-    <splide :options="options">
+    <splide :options="options" :slides="slides">
 
       <splide-slide v-for="slide in slides" :key="slide.src">
         <img :src="slide.src">
@@ -14,6 +14,7 @@
       </template>
 
     </splide>
+    
   </div>
 
 </template>
@@ -35,11 +36,7 @@ export default {
       pagination  : false,
       cover       : true,
       // focus       : 'center',
-      transition: 'fade',
-      i18n: {
-        prev: 'Previous slide',
-        next: 'Next slide',
-      }
+      transition: 'fade'
     },
     slides: [
       { src: '/images/cover/1.jpeg' },
@@ -47,12 +44,8 @@ export default {
       { src: '/images/cover/3.jpeg' },
     ]
 
-  }),
-  mounted(){
-    
-  }
-   
-
+  })
+  
 }
 
   

@@ -3,7 +3,21 @@
     <Menu />
     <section class="relative block bg-red-900" style="height: 500px;">
       <div class="absolute top-0 w-full h-full">
-         <Cover />
+         <!-- <Cover /> -->
+         <splide :options="options" :slides="slides">
+           
+            <splide-slide v-for="slide in slides" :key="slide.src">
+              <img :src="slide.src">
+            </splide-slide>
+
+            <template v-slot:controls>
+              <div class="splide__progress">
+                <div class="splide__progress__bar">
+                </div>
+              </div>
+            </template>
+
+          </splide>
       </div>
       <div
         class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
@@ -41,3 +55,37 @@
     <Footer />
   </div>
 </template>
+
+<script>
+import { Splide, SplideSlide } from '@splidejs/vue-splide';
+export default {
+   components: {
+    Splide,
+    SplideSlide,
+  },
+  data: () => ({
+    options: {
+      type      : 'loop',
+      rewind : true,
+      width  : "100vw",
+      fixedHeight:500,
+      clones: 2,
+      perPage: 1,
+      autoplay    : true,
+      pauseOnHover: true,
+      gap    : '1rem',
+      pagination  : false,
+      cover       : true,
+      // focus       : 'center',
+      transition: 'fade'
+    },
+    slides: [
+      { src: '/images/cover/1.jpeg' },
+      { src: '/images/cover/2.jpeg' },
+      { src: '/images/cover/3.jpeg' },
+    ]
+
+  })
+  
+}
+</script>

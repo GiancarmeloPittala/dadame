@@ -76,7 +76,7 @@ export default {
       'node_modules',
       'README.md'
     ],
-    dir : '../server/public/',
+    // dir : '../server/public/',
     fallback: '404.html'
   }
 }
